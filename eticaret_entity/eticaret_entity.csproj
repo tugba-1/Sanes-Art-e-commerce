@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+  <!--<ItemGroup>
+    <PackageReference Include="AspNetCoreRuntime.3.1.x64" Version="3.1.32" />
+  </ItemGroup>-->
+</Project>

@@ -1,0 +1,32 @@
+@model eticaret_v2.ViewModels.ProductDetailModel
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Admin Categories</h1>
+            <hr>
+            <table class="table table-bordered">
+              
+                <tbody>
+                    @*@if(Model.categorys.Count>0)
+                    {*@
+                    @foreach (var item in Model.categorys)
+                    {
+                    <tr>
+                        @*<td>@item.Id</td>*@
+                        <td>@item.Name</td>
+                        
+                    </tr>
+                    }
+                    @*}else{*@
+                    <div class="alert alert-warning">
+                        <h3>No Categories</h3>
+                    </div>
+                    @*  *@}
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>

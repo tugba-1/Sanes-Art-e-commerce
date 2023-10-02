@@ -1,0 +1,31 @@
+@model eticaret_v2.ViewModels.ProductViewModel
+@*@{
+    var popularClass = Model.products.Count>2? "popular":"";
+    var products = Model.products;
+}*@
+
+@*@section Categories
+{
+    @await Component.InvokeAsync("Categories")
+}*@
+
+@*@if(products.Count == 0)
+{
+    @await Html.PartialAsync("_noproduct")
+}
+else
+{*@
+<div class="row">
+    <div class="col-md-3">
+        @await Component.InvokeAsync("Categories")
+    </div>
+    <div class="row">
+        @foreach (var product in Model.products)
+        {
+            <div class="col-md-3">
+                @await Html.PartialAsync("_product", product)
+            </div>
+        }
+    </div>
+</div>
+    @*}*@

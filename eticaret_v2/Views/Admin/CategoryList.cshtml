@@ -1,0 +1,47 @@
+@model eticaret_v2.ViewModels.ProductDetailModel
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Admin Categories</h1>
+            <hr>
+            <table class="table table-bordered">
+                @*<thead>
+                    <tr>
+                        <td style="width: 30px;">Id</td>
+                        <td style="width: 100px;">Image</td>
+                        <td>Name</td>
+                        <td style="width: 20px;">Price</td>
+                        <td style="width: 150px;"></td>
+                    </tr>
+                </thead>*@
+                <tbody>
+                    @if(Model.categorys.Count>0)
+                    {
+                    @foreach (var item in Model.categorys)
+                    {
+                    <tr>
+                        @*<td>@item.Id</td>*@
+                        <td>@item.Name</td>
+                        <td>
+                            <a href="/admin/categorys/@item.Id" class="btn btn-primary btn-sm mr-2">Edit</a>
+                            <form action="/admin/deletecategory" method="post" style="display:inline;">
+                                <input type="hidden" name="Id" value="@item.Id">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                           
+                        </td>
+                    </tr>
+                    }
+                    }else{
+                    <div class="alert alert-warning">
+                        <h3>No Categories</h3>
+                    </div>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>

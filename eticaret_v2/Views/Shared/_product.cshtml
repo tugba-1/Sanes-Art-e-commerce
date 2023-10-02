@@ -1,0 +1,52 @@
+﻿@model eticaret_entity.Models.Product;
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</head>
+<a asp-controller="eticaret" asp-action="_details" asp-route-id="@Model.Id">
+    <img class="img-fluid" data-toggle="tooltip" title="incele" src="~/Img/@Model.ImgUrl" alt="" width="520">
+</a>
+
+<div class="container mt-3">
+    @*<div class="card-body">*@
+    <a class="card-title" >@Model.Name</a>
+
+    @*<a href="/Home/Index/@Model.Id" class="btn btn-primary">İncele</a>*@
+    @*<a asp-controller="Home" asp-action="_details" asp-route-id="@Model.Id" class="btn btn-primary">İncele</a>*@
+    <br />
+    <br />
+    <br />
+    <br />
+    @*<br />
+    <br />
+    <br />*@
+    @if (User.Identity.IsAuthenticated)
+    {
+        <form asp-controller="Card" asp-action="AddtoCard" method="post">
+            <input type="hidden" name="ProductId" value="@Model.Id" />
+            <input type="hidden" name="quantity" value="1" />
+            @*<button type="submit" class="btn btn-primary">Sepete Ekle</button>*@
+        </form>
+    }
+
+    @*<a asp-controller="Home" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Düzenle</a>*@
+
+    <form method="POST" action="/Home/delete" style="display:inline;">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        @*<button type="submit" class="btn btn-primary">Sil</button>*@
+    </form>
+
+    @*</div>*@
+</div>
+

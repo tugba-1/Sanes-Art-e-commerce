@@ -1,0 +1,53 @@
+﻿@model eticaret_v2.ViewModels.ProductViewModel
+@*@{
+        var popularClass = Model.products.Count>2? "popular":"";
+        var products = Model.products;
+    }*@
+
+@*@section Categories
+{
+    @await Component.InvokeAsync("Categories")
+}*@
+
+@*@if(products.Count == 0)
+    {
+        @await Html.PartialAsync("_noproduct")
+    }
+    else
+    {*@
+
+<div id="body">
+    <div class="row">
+        @*<div class="col-md-3">
+            @await Component.InvokeAsync("Categories")
+        </div>*@
+        @foreach (var product in Model.products)
+        {       
+            <div class="col-md-3">              
+                @await Html.PartialAsync("_product", product)
+            </div>
+        }
+    </div>
+    
+</div>
+<br />
+@*<div class="row">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+
+                @for (int i = 0; i < Model.PageInfo.TotalPages(); i++)
+                {
+                    if (String.IsNullOrEmpty(Model.PageInfo.CurrentCategory))
+                    {
+                        <li class="page-item" @(Model.PageInfo.CurrentPage==i+1?"active":"")><a class="page-link" href="/Home/List?page=@(i+1)">@(i+1)</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item" @(Model.PageInfo.CurrentPage==i+1?"active":"")><a class="page-link" href="/Home/List/@Model.PageInfo.CurrentCategory?page=@(i+1)">@(i+1)</a></li>
+                    }
+                }
+
+            </ul>
+        </nav>
+    </div>*@
+@*}*@

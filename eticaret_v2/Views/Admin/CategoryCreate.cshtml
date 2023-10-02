@@ -1,0 +1,27 @@
+﻿@model eticaret_v2.ViewModels.CategoryCreate;
+
+<h1 class="h3">Create Category</h1>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-controller="Admin" asp-action="CategoryCreate" method="POST">
+            @*@foreach (var i in Model.products)
+            {*@
+
+                            <div class="form-group row">
+                                <label asp-for="@Model.Name" class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" asp-for="@Model.Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-10 offset-sm-2">
+                                    <button type="submit" class="btn btn-primary">Save Category</button>
+                                </div>
+                            </div>
+
+            @*}*@
+        </form>                   
+    </div>
+</div>

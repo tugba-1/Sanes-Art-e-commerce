@@ -34,12 +34,9 @@ namespace eticaret_v2
             //services.AddRazorPages();
             //services.AddServerSideBlazor();
             //services.AddScoped<IUnitOfWork,UnitOfWork>();
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(@"Server=P3NWPLSK12SQL-v06.shr.prod.phx3.secureserver.net;Database=eticaret_v2;user=tugb;password=Az2580139_;TrustServerCertificate=True"));
-            //services.AddDbContext<artContext>(options => options.UseSqlServer(@"Server=P3NWPLSK12SQL-v06.shr.prod.phx3.secureserver.net;Database=eticaret_v2;user=tugb;password=Az2580139_;TrustServerCertificate=True"));
-            services.AddIdentity<Users, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
-            //services.AddIdentity<Users, IdentityRole>().AddEntityFrameworkStores<artContext>().AddDefaultTokenProviders();
-
-
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(@"Server=;Database=eticaret_v2;user=;password=;TrustServerCertificate=True"));
+                   services.AddIdentity<Users, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
+       
             services.Configure<IdentityOptions>(options => {
                 // password
                 options.Password.RequireDigit = true;

@@ -34,7 +34,7 @@ namespace eticaret_v2
             //services.AddRazorPages();
             //services.AddServerSideBlazor();
             //services.AddScoped<IUnitOfWork,UnitOfWork>();
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(@"Server=;Database=eticaret_v2;user=;password=;TrustServerCertificate=True"));
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(@"Server=;Database=;user=;password=;TrustServerCertificate=True"));
                    services.AddIdentity<Users, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
        
             services.Configure<IdentityOptions>(options => {
